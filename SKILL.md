@@ -94,7 +94,8 @@ Keep it 5–7 lines, then build. For a tiny one-component ask, a one-line versio
 5. **Pull component code.** Load `references/components.md` for cross-framework component recipes, and the matching `references/frameworks/<framework>.md` for idioms, navigation, theming, and animation in that stack.
 6. **Build.**
 7. **Restraint + accessibility pass (mandatory).** Run `references/ui-restraint-and-accessibility.md`: cut anything that didn't earn its place (the most common failure is *too much* — text/icons/badges/colors breaking the UI), verify 1:1 fidelity, confirm every element uses the right semantic component with required props + a11y (labels, roles, states, ≥48dp/44pt targets).
-8. **Premium polish pass.** Run `references/premium-polish.md` to push from "fine" to top-studio tier: kill AI-slop tells (off-black/white, text ramp, single accent, soft layered shadows), apply optical adjustments, add press states + haptics + choreographed motion, tune typography, true dark mode, and one or two signature moves. Scan `references/anti-patterns.md` and remove any hits. Then self-check against the Quality bar below.
+8. **Premium polish pass.** Run `references/premium-polish.md` to push from "fine" to top-studio tier: kill AI-slop tells (off-black/white, text ramp, single accent, soft layered shadows), apply optical adjustments, add press states + haptics + choreographed motion, tune typography, true dark mode, and one or two signature moves. Scan `references/anti-patterns.md` and remove any hits.
+9. **Diagnostics pass (zero-tolerance).** Run `references/error-handling-and-diagnostics.md`: type-check + lint/`analyze` + run, and **fix every error AND warning in place** — read the exact message, fix the root cause, re-run until compile is clean, lint/analyze is zero, and the console/logcat is clean (no red, no yellow, no stray logs). Warnings are treated as bugs. Then self-check against the Quality bar below.
 
 > Progressive disclosure: keep this file in context, open reference files only when the task needs them. Don't dump all references for a one-component ask.
 
@@ -131,6 +132,7 @@ Most AI-generated mobile UI fails the same way: flat, evenly-spaced, default-col
 - [ ] **Density:** chosen to fit the screen's job; spacing is hierarchical (related tight, groups wide), not even gaps; item weight varies.
 - [ ] **Restraint:** nothing on screen that didn't earn its place; one primary action, one accent, 2–3 type sizes; long text truncates; whitespace intentional. (Most AI UI fails by doing *too much*.)
 - [ ] **No anti-patterns:** scanned `anti-patterns.md`, zero hits.
+- [ ] **Zero diagnostics:** compiles with no errors; lint/`analyze` clean; app runs with a clean console (no red, no yellow, no stray logs); every warning fixed at the source, not suppressed.
 - [ ] Every element uses the right semantic component with required props + accessibility (label/role/state); 1:1 fidelity verified at small width, largest text scale, and dark mode.
 - [ ] Code is idiomatic for the framework (composables/views/widgets/components named and structured the way that ecosystem expects) and reusable, not one giant function.
 - [ ] (RN) One UI/styling library, used to the end — no mixing systems.
@@ -144,6 +146,7 @@ Most AI-generated mobile UI fails the same way: flat, evenly-spaced, default-col
 - `references/screen-density.md` — Density spectrum (dense↔airy) per screen job, spacing as hierarchical rhythm, anti-uniformity moves.
 - `references/case-studies.md` — *Why* top apps feel premium: Linear, Revolut, Telegram, Airbnb, Notion, Stripe, Arc, Coinbase, Duolingo — hierarchy/density/radius/shadow/motion/color signatures + per-app AI pitfalls. Use for "make it like X".
 - `references/anti-patterns.md` — The AI-UI blocklist: what NOT to do (slop tells), scanned in the polish pass.
+- `references/error-handling-and-diagnostics.md` — **Zero-tolerance diagnostics.** Per-framework common error/warning/log → fix tables (Compose, SwiftUI, Flutter, RN/Expo), the diagnostics loop, and the fix-in-place workflow. Warnings treated as bugs.
 - `references/ui-restraint-and-accessibility.md` — **Mandatory final pass.** Restraint/anti-overcrowd, density & whitespace, 1:1 pixel fidelity, "what's underneath" component analysis, accessibility props per framework (label/role/state, hit area, dynamic type, contrast).
 - `references/premium-polish.md` — **Premium tier.** Anti-AI-slop tells + fixes, optical adjustments, micro-interactions & haptics, motion choreography, layered depth/materials, typography craft, true dark mode, signature moves, performance-as-polish.
 - `references/screen-patterns.md` — Mobbin-style screen skeletons: onboarding, auth, feed/list, detail, chat, profile, settings, search, checkout/paywall, tab scaffold. Layout anatomy per pattern.
