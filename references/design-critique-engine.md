@@ -83,6 +83,43 @@ BUILD → CRITIQUE (find defects) → REVISE (fix them) → CRITIQUE again
 
 ---
 
+## Anti-gaming mechanisms (so self-review isn't a student grading their own exam)
+
+A model reviewing itself tends to rubber-stamp ("Hierarchy 9, Premium 10") when the real screen is a 6. These three mechanisms force honesty. Use all three on non-trivial screens.
+
+### 1. Evidence-based scoring (no evidence → can't score)
+Every score must cite **concrete, specific evidence** pointing at actual elements — not adjectives. Format:
+```
+Hierarchy: 8/10
+  Evidence:
+    - Primary CTA "Reserve" is filled-accent, full-width, pinned bottom (only accent on screen)
+    - Title 22pt semibold dominates the first viewport
+    - Timestamp muted to ~38% — recedes
+  Missing / weak:
+    - The price chip also uses accent → mild competition with the CTA
+```
+If you cannot produce evidence for a score, **you cannot give that score** — go look harder or score lower. "Looks good" is not evidence.
+
+### 2. Forced failure search (assume it's broken)
+Before scoring, run this explicitly:
+```
+Find 5 concrete reasons NOT to ship this screen.
+→ Fix them.
+→ Re-score.
+```
+The rule forces the model to find ≥5 real defects even when it "feels done" — there are almost always 5. No vague reasons; each must name an element and a fix.
+
+### 3. Adversarial review (two personas must agree)
+Critique from two opposed roles, surface their disagreement, then resolve it:
+```
+DESIGNER persona     → "Too crowded; the secondary actions fight the CTA; spacing is uneven."
+STAFF ENGINEER persona → "Too many bespoke components; this won't scale; a11y labels missing on the icon row."
+RESOLVE → reconcile both sets of objections into concrete fixes, then re-critique.
+```
+The designer hunts visual/UX flaws; the engineer hunts structural/scalability/a11y flaws. A screen only passes when **both** are satisfied. This catches what a single viewpoint misses.
+
+> Order: forced-failure search → fix → adversarial review → fix → evidence-based scorecard. Only then ship.
+
 ## Honesty rules
 
 - **Name specifics**, not "looks good." "The timestamp is the same weight as the title — demote it" beats "nice hierarchy."

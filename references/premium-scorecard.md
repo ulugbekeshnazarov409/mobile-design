@@ -69,9 +69,21 @@ Compute weighted total if useful (sum of score×weight ÷ max). Thresholds: **< 
 
 ---
 
+## Evidence is mandatory (anti-gaming)
+
+A score without evidence is invalid — default it to the failing range. For **every** dimension, cite specific elements:
+```
+Hierarchy 9/10 — evidence: only the "Reserve" CTA uses accent; title 22pt dominates; time muted 38%.
+Premium feel 6/10 — evidence: surfaces are pure #FFF (slop tell); text is one flat gray; hard 0.5 shadow on cards. → revise.
+```
+Adjectives ("clean", "nice") are not evidence. If you can't point at the pixels, you can't claim the score.
+
+Run the `design-critique-engine.md` anti-gaming sequence **before** scoring: forced-failure search (5 reasons not to ship) → adversarial review (designer vs staff engineer) → fix → then score with evidence. Scoring before that sequence tends to inflate.
+
 ## Don't game it
 
-- Score what's *actually there*, not what you intended.
+- Score what's *actually there*, not what you intended — with evidence per dimension.
 - If unsure between two scores, pick the lower and improve.
-- A high total with a failing critical dimension is **not** a pass.
+- A high total with a failing critical dimension (a11y/diagnostics < 10) is **not** a pass.
+- If every dimension is 8+ on the first try with no revisions, you under-critiqued — re-run forced-failure search.
 - The goal isn't the number — it's the revisions the number forces.

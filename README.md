@@ -4,6 +4,8 @@
 
 ### A Claude Code skill that builds **premium, native-feeling, production-grade mobile UI** — across Jetpack Compose, SwiftUI, Flutter, and React Native / Expo.
 
+> Not just *component-aware* — it's **flow-aware, motion-aware, and self-critical**: it builds whole journeys, ships real motion + haptics, fixes every error/warning, then critiques and scores its own work before shipping.
+
 Grounded in **Google Material Design 3**, **Apple Human Interface Guidelines**, and real-world app layout patterns. It detects your project's stack, locks into your styling system, and ships screens that look **1:1 with real apps** — not generic AI mush.
 
 </div>
