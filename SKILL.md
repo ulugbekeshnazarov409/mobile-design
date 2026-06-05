@@ -92,7 +92,8 @@ Keep it 5–7 lines, then build. For a tiny one-component ask, a one-line versio
 3. **Identify the screen pattern.** Load `references/screen-patterns.md` to map the request ("chat", "feed", "onboarding", "profile", "settings", "paywall") to a proven layout skeleton.
 4. **Pull component code.** Load `references/components.md` for cross-framework component recipes, and the matching `references/frameworks/<framework>.md` for idioms, navigation, theming, and animation in that stack.
 5. **Build.**
-6. **Restraint + accessibility pass (mandatory).** Run `references/ui-restraint-and-accessibility.md`: cut anything that didn't earn its place (the most common failure is *too much* — text/icons/badges/colors breaking the UI), verify 1:1 fidelity, confirm every element uses the right semantic component with required props + a11y (labels, roles, states, ≥48dp/44pt targets), then self-check against the Quality bar below.
+6. **Restraint + accessibility pass (mandatory).** Run `references/ui-restraint-and-accessibility.md`: cut anything that didn't earn its place (the most common failure is *too much* — text/icons/badges/colors breaking the UI), verify 1:1 fidelity, confirm every element uses the right semantic component with required props + a11y (labels, roles, states, ≥48dp/44pt targets).
+7. **Premium polish pass.** Run `references/premium-polish.md` to push from "fine" to top-studio tier: kill AI-slop tells (off-black/white, text ramp, single accent, soft layered shadows), apply optical adjustments, add press states + haptics + choreographed motion, tune typography, true dark mode, and one or two signature moves. Then self-check against the Quality bar below.
 
 > Progressive disclosure: keep this file in context, open reference files only when the task needs them. Don't dump all references for a one-component ask.
 
@@ -136,6 +137,7 @@ Most AI-generated mobile UI fails the same way: flat, evenly-spaced, default-col
 - `references/design-foundations.md` — Tokens: spacing, type ramps, color roles (M3 + HIG), shape, elevation, motion.
 - `references/design-to-code.md` — Token architecture (primitive→semantic→component), pixel-perfect handoff, mobile UX laws (thumb zone, touch targets, navigation), clean component code.
 - `references/ui-restraint-and-accessibility.md` — **Mandatory final pass.** Restraint/anti-overcrowd, density & whitespace, 1:1 pixel fidelity, "what's underneath" component analysis, accessibility props per framework (label/role/state, hit area, dynamic type, contrast).
+- `references/premium-polish.md` — **Premium tier.** Anti-AI-slop tells + fixes, optical adjustments, micro-interactions & haptics, motion choreography, layered depth/materials, typography craft, true dark mode, signature moves, performance-as-polish.
 - `references/screen-patterns.md` — Mobbin-style screen skeletons: onboarding, auth, feed/list, detail, chat, profile, settings, search, checkout/paywall, tab scaffold. Layout anatomy per pattern.
 - `references/components.md` — Cross-framework component catalog: buttons, text fields, cards, chips, list items, app bars, bottom nav/tab bar, FAB, bottom sheet, dialogs, avatars, badges.
 - `references/design-review.md` — **Review/lint mode.** Audit checklist + report format for finding and refactoring design issues in existing UI code.
