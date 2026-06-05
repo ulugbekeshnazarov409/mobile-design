@@ -89,11 +89,12 @@ Keep it 5–7 lines, then build. For a tiny one-component ask, a one-line versio
 0. **Project pre-flight (do this first on any existing repo).** Load `references/project-awareness.md`. Detect the framework, the **styling system in use** (e.g. RN with NativeWind → className-only; Tamagui; restyle; or StyleSheet), the existing tokens, and existing components — then **conform to them**. Reuse tokens/components; don't impose a different system. Add a package only when there's a real gap, the ecosystem way (`npx expo install`, `flutter pub add`, etc.).
 1. **Identify the framework.** If the user named one (Compose, SwiftUI, Flutter, RN/Expo) use it. If the repo makes it obvious (build.gradle.kts → Compose; *.xcodeproj/Package.swift → SwiftUI; pubspec.yaml → Flutter; package.json + react-native → RN), match it. If genuinely ambiguous, ask once.
 2. **Read the foundations.** Load `references/design-foundations.md` for the token system (spacing, type, color, shape, elevation, motion), and `references/design-to-code.md` for token architecture, pixel-perfect handoff, and mobile UX laws (thumb zone, touch targets). Every screen starts from tokens — mapped onto the project's actual token names — never hardcoded magic numbers.
-3. **Identify the screen pattern.** Load `references/screen-patterns.md` to map the request ("chat", "feed", "onboarding", "profile", "settings", "paywall") to a proven layout skeleton.
-4. **Pull component code.** Load `references/components.md` for cross-framework component recipes, and the matching `references/frameworks/<framework>.md` for idioms, navigation, theming, and animation in that stack.
-5. **Build.**
-6. **Restraint + accessibility pass (mandatory).** Run `references/ui-restraint-and-accessibility.md`: cut anything that didn't earn its place (the most common failure is *too much* — text/icons/badges/colors breaking the UI), verify 1:1 fidelity, confirm every element uses the right semantic component with required props + a11y (labels, roles, states, ≥48dp/44pt targets).
-7. **Premium polish pass.** Run `references/premium-polish.md` to push from "fine" to top-studio tier: kill AI-slop tells (off-black/white, text ramp, single accent, soft layered shadows), apply optical adjustments, add press states + haptics + choreographed motion, tune typography, true dark mode, and one or two signature moves. Then self-check against the Quality bar below.
+3. **Decide hierarchy & density (do this before laying out).** Load `references/visual-hierarchy.md` — rank every element Primary/Secondary/Tertiary, pick the one primary action, apply the text opacity ramp. Then `references/screen-density.md` — choose the density that fits the screen's job (dense chat vs airy paywall) and use *hierarchical* spacing, not even gaps. These two fix the #1 and #2 AI failures. For a premium reference point, pull the closest app's DNA from `references/case-studies.md` ("make it like Linear/Revolut/Telegram…").
+4. **Identify the screen pattern.** Load `references/screen-patterns.md` to map the request ("chat", "feed", "onboarding", "profile", "settings", "paywall") to a proven layout skeleton.
+5. **Pull component code.** Load `references/components.md` for cross-framework component recipes, and the matching `references/frameworks/<framework>.md` for idioms, navigation, theming, and animation in that stack.
+6. **Build.**
+7. **Restraint + accessibility pass (mandatory).** Run `references/ui-restraint-and-accessibility.md`: cut anything that didn't earn its place (the most common failure is *too much* — text/icons/badges/colors breaking the UI), verify 1:1 fidelity, confirm every element uses the right semantic component with required props + a11y (labels, roles, states, ≥48dp/44pt targets).
+8. **Premium polish pass.** Run `references/premium-polish.md` to push from "fine" to top-studio tier: kill AI-slop tells (off-black/white, text ramp, single accent, soft layered shadows), apply optical adjustments, add press states + haptics + choreographed motion, tune typography, true dark mode, and one or two signature moves. Scan `references/anti-patterns.md` and remove any hits. Then self-check against the Quality bar below.
 
 > Progressive disclosure: keep this file in context, open reference files only when the task needs them. Don't dump all references for a one-component ask.
 
@@ -126,7 +127,10 @@ Most AI-generated mobile UI fails the same way: flat, evenly-spaced, default-col
 - [ ] Touch targets ≥ 48dp/44pt; safe-area insets respected.
 - [ ] At least the obvious state changes are animated with platform easing.
 - [ ] Empty/loading/error states considered for full screens.
+- [ ] **Hierarchy:** at 0.5s one element wins the eye; elements ranked Primary/Secondary/Tertiary; text uses the opacity ramp. (The #1 AI failure.)
+- [ ] **Density:** chosen to fit the screen's job; spacing is hierarchical (related tight, groups wide), not even gaps; item weight varies.
 - [ ] **Restraint:** nothing on screen that didn't earn its place; one primary action, one accent, 2–3 type sizes; long text truncates; whitespace intentional. (Most AI UI fails by doing *too much*.)
+- [ ] **No anti-patterns:** scanned `anti-patterns.md`, zero hits.
 - [ ] Every element uses the right semantic component with required props + accessibility (label/role/state); 1:1 fidelity verified at small width, largest text scale, and dark mode.
 - [ ] Code is idiomatic for the framework (composables/views/widgets/components named and structured the way that ecosystem expects) and reusable, not one giant function.
 - [ ] (RN) One UI/styling library, used to the end — no mixing systems.
@@ -136,6 +140,10 @@ Most AI-generated mobile UI fails the same way: flat, evenly-spaced, default-col
 - `references/project-awareness.md` — **Pre-flight.** Detect the repo's framework, styling system, tokens, and components; conform to them; add-package policy. Run first on any existing repo.
 - `references/design-foundations.md` — Tokens: spacing, type ramps, color roles (M3 + HIG), shape, elevation, motion.
 - `references/design-to-code.md` — Token architecture (primitive→semantic→component), pixel-perfect handoff, mobile UX laws (thumb zone, touch targets, navigation), clean component code.
+- `references/visual-hierarchy.md` — **The #1 AI fix.** Rank Primary/Secondary/Tertiary, the 3-second rule, text opacity ramp, one-primary-action, per-pattern hierarchy.
+- `references/screen-density.md` — Density spectrum (dense↔airy) per screen job, spacing as hierarchical rhythm, anti-uniformity moves.
+- `references/case-studies.md` — *Why* top apps feel premium: Linear, Revolut, Telegram, Airbnb, Notion, Stripe, Arc, Coinbase, Duolingo — hierarchy/density/radius/shadow/motion/color signatures + per-app AI pitfalls. Use for "make it like X".
+- `references/anti-patterns.md` — The AI-UI blocklist: what NOT to do (slop tells), scanned in the polish pass.
 - `references/ui-restraint-and-accessibility.md` — **Mandatory final pass.** Restraint/anti-overcrowd, density & whitespace, 1:1 pixel fidelity, "what's underneath" component analysis, accessibility props per framework (label/role/state, hit area, dynamic type, contrast).
 - `references/premium-polish.md` — **Premium tier.** Anti-AI-slop tells + fixes, optical adjustments, micro-interactions & haptics, motion choreography, layered depth/materials, typography craft, true dark mode, signature moves, performance-as-polish.
 - `references/screen-patterns.md` — Mobbin-style screen skeletons: onboarding, auth, feed/list, detail, chat, profile, settings, search, checkout/paywall, tab scaffold. Layout anatomy per pattern.
