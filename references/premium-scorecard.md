@@ -78,7 +78,7 @@ Premium feel 6/10 — evidence: surfaces are pure #FFF (slop tell); text is one 
 ```
 Adjectives ("clean", "nice") are not evidence. If you can't point at the pixels, you can't claim the score.
 
-Run the `design-critique-engine.md` anti-gaming sequence **before** scoring: forced-failure search (5 reasons not to ship) → adversarial review (designer vs staff engineer) → fix → then score with evidence. Scoring before that sequence tends to inflate.
+Run the `design-critique-engine.md` anti-gaming sequence **before** scoring: forced-failure search (5 reasons not to ship) → adversarial review (Designer vs Staff Engineer vs Product Manager) → fix → then score with evidence. The PM lens is a scored concern too: if the screen's goal/primary action isn't instantly clear or the screen is doing too many jobs, that caps **Hierarchy** and **Restraint** regardless of how it looks. Scoring before this sequence tends to inflate.
 
 ## Don't game it
 

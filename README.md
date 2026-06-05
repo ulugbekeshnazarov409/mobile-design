@@ -150,16 +150,41 @@ Flutter app and refactor the home screen to use it.
 
 ## 📂 What's inside
 
+A 10-gate pipeline backed by **30 reference files**, loaded on demand:
+
 ```
 mobile-design/
-├── SKILL.md                          # Entry: modes, DETECT→DECIDE→PLAN, philosophy, quality bar
+├── SKILL.md                          # Entry: modes, DETECT→DECIDE→PLAN→…→CRITIQUE pipeline, quality bar
 └── references/
+    # — Project & foundations —
     ├── project-awareness.md          # Detect repo stack/styling/tokens/components — conform to them
     ├── design-foundations.md         # Tokens: spacing, type, color roles (M3 + HIG), shape, elevation, motion
-    ├── design-to-code.md             # Token architecture, pixel-perfect handoff, mobile UX laws (thumb zone, touch targets)
-    ├── screen-patterns.md            # Mobbin-style screen skeletons (onboarding, feed, chat, profile, settings, paywall…)
-    ├── components.md                 # Cross-framework component recipes (buttons, fields, cards, sheets, nav…)
-    ├── ui-restraint-and-accessibility.md  # Mandatory final pass: anti-overcrowd + 1:1 fidelity + a11y per framework
+    ├── design-to-code.md             # Token architecture, pixel-perfect handoff, mobile UX laws (thumb zone, targets)
+    # — Visual language —
+    ├── color-systems.md              # Semantic accent ladder, palette from seed, tinted neutrals, true dark mode
+    ├── typography-systems.md         # Type voice/DNA, pairing, tracking/line-height, tabular figures, custom fonts
+    ├── visual-hierarchy.md           # P/S/T ranking, 3-second rule, text opacity ramp (the #1 AI fix)
+    ├── screen-density.md             # Density spectrum + spacing as hierarchical rhythm
+    ├── psychology.md                 # F/Z scan, attention anchors, Gestalt, cognitive load, perceived speed
+    ├── case-studies.md               # Why Linear/Revolut/Telegram/Airbnb… feel premium — DNA + pitfalls
+    # — Build —
+    ├── screen-patterns.md            # Mobbin-style skeletons (onboarding, feed, chat, profile, settings, paywall…)
+    ├── components.md                 # Cross-framework component recipes
+    ├── interaction-patterns.md       # Every screen as a state machine (loading/empty/error/offline/success…)
+    ├── flow-architecture.md          # Build the whole journey: sequence, branches, carried state, navigation
+    ├── platform-personality.md       # Same app, different soul — iOS calm vs Android expressive
+    ├── product-maturity.md           # Build for the stage (MVP → Growth → Scale → Enterprise)
+    ├── real-world-constraints.md     # Offline, RTL, large text, tablets/foldables, long content, permissions
+    # — Polish & motion —
+    ├── premium-polish.md             # Anti-slop tells, optical adjustments, depth, signature moves, performance
+    ├── motion-recipes.md             # Timing/spring tiers, press, choreography, enter↔exit, hero/numeric/skeleton
+    ├── gestures-and-haptics.md       # Haptic-by-action map + swipe/drag/pull-refresh/long-press/reorder
+    ├── ui-restraint-and-accessibility.md  # Anti-overcrowd + 1:1 fidelity + a11y per framework
+    ├── anti-patterns.md              # The AI-UI blocklist (what NOT to do)
+    # — Verify —
+    ├── error-handling-and-diagnostics.md  # Zero-tolerance: per-framework error/warning/log → fix tables
+    ├── design-critique-engine.md     # Self-review: 3-persona (Designer/Engineer/PM) adversarial review + REVISE loop
+    ├── premium-scorecard.md          # 0–10 weighted rubric with evidence; a11y + diagnostics must = 10
     ├── design-review.md              # Review/lint mode: audit checklist + report format
     └── frameworks/
         ├── jetpack-compose.md        # Compose + M3 idioms, theming, navigation, animation

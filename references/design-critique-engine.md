@@ -109,14 +109,19 @@ Find 5 concrete reasons NOT to ship this screen.
 ```
 The rule forces the model to find ≥5 real defects even when it "feels done" — there are almost always 5. No vague reasons; each must name an element and a fix.
 
-### 3. Adversarial review (two personas must agree)
-Critique from two opposed roles, surface their disagreement, then resolve it:
+### 3. Adversarial review (three personas must agree)
+Critique from three opposed roles, surface their disagreements, then resolve them. A screen only passes when **all three** are satisfied — each hunts flaws the others miss:
 ```
-DESIGNER persona     → "Too crowded; the secondary actions fight the CTA; spacing is uneven."
-STAFF ENGINEER persona → "Too many bespoke components; this won't scale; a11y labels missing on the icon row."
-RESOLVE → reconcile both sets of objections into concrete fixes, then re-critique.
+DESIGNER       → "Too crowded; the secondary actions fight the CTA; spacing is uneven; motion is flat."
+                 (hierarchy, density, spacing, visual quality, motion)
+STAFF ENGINEER → "Too many bespoke components; this won't scale; a11y labels missing on the icon row; relayouts every frame."
+                 (architecture, performance, accessibility, maintainability)
+PRODUCT MANAGER→ "Is this screen achieving its goal? Where's the conversion? Is the primary action unmistakable?
+                  Where does the user drop off? Is this one screen doing too many jobs?"
+                 (clarity, business goal, conversion, task completion, scope)
+RESOLVE → reconcile all three sets of objections into concrete fixes, then re-critique.
 ```
-The designer hunts visual/UX flaws; the engineer hunts structural/scalability/a11y flaws. A screen only passes when **both** are satisfied. This catches what a single viewpoint misses.
+The **PM lens** is the one AI skips: a screen can be beautiful and well-built yet fail its job (unclear goal, buried CTA, doing too much). If the PM can't instantly say what this screen is *for* and what the user should *do*, fix that first.
 
 > Order: forced-failure search → fix → adversarial review → fix → evidence-based scorecard. Only then ship.
 
